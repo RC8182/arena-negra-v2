@@ -1,11 +1,15 @@
-'use client'
 import { Box, Flex, Heading, } from "@chakra-ui/react";
 import { Parallax } from "@/components/parallax/parallax";
 import { datos } from "./db";
+import { useEffect, useState } from "react";
 
 
-export default function Galeria({idioma}) {
-
+export default function Galeria({idioma, data}) {
+  const [imgGaleria, setImgGaleria] = useState([]);
+  useEffect(() => {
+    const galeriaImages = data.filter(image => image.url.includes('/uploads/galeria/'));
+    setImgGaleria(galeriaImages);
+  }, [data]);
   const datosGaleria =( idioma==='es') ? datos?.esp : datos?.ing;
   const titulo= datosGaleria.galeria.titulo;
 

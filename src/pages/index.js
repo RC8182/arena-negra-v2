@@ -1,5 +1,4 @@
 import { Inter } from 'next/font/google'
-import Prueba from '@/components/prueba';
 import NavBar from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
 import { HStack } from '@chakra-ui/react';
@@ -20,7 +19,7 @@ export default function Inicio({data}) {
 
 
       <NavBar idioma={idioma}/>
-      <Body idioma={idioma}/>
+      <Body idioma={idioma} data={data}/>
       <Footer idioma={idioma} />
       <HStack display={{ base: 'flex', md: 'none' }}>
       <FootBar idioma={idioma}/>
@@ -31,14 +30,17 @@ export default function Inicio({data}) {
 
 export async function getStaticProps() {
   // Cargar datos en el servidor
-  const data = await loadData();
+  const data = await loadDataDb();
 
   // Pasar los datos a tu página a través de las props
   return { props: { data } };
 }
 
-async function loadData() {
-  // Aquí es donde cargarías tus datos. Este es solo un ejemplo.
-  return 'Hello, worlgkhkldfkjhldfjkkhgldjhlkdjhkgjdhgdjhgkljdñldfd!';
+export async function loadDataDb() {
+  // Call an external API endpoint to get posts
+  const res = await fetch('http://localhost:3000/api/get')
+  const data = await res.json()
+ 
+  return data
 }
 
