@@ -4,7 +4,15 @@ import Footer from '@/components/footer/footer';
 import { HStack } from '@chakra-ui/react';
 import FootBar from '@/components/footer/footBar';
 import { Body } from '@/components/body/body';
+import Head from 'next/head';
 
+
+
+export const metadata = {
+  title: 'Arena Negra Restaurante - Los Abrigos, Tenerife',
+  description: 'Disfruta de las mejores paellas y parrilladas de pescado local en Los Abrigos, Tenerife. Arena Negra Restaurant ofrece una experiencia única con vistas impresionantes y un servicio al cliente inmejorable.',
+  keywords: 'Restaurante, Paella, Mariscos, Pescado Local, Los Abrigos, Tenerife, Vistas al Mar, Servicio Excelente, Restaurante en los Abrigos, Donde comer pescado en los abrigos, donde comer paella en los abrigos'
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,11 +21,13 @@ export default function Inicio({data}) {
 
   return (
     <main
-    className={`flex flex-col  ${inter.className}`}
-  >
-    <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
-
-
+    className={`flex flex-col  ${inter.className}`}>
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
+      </Head>
       <NavBar idioma={idioma}/>
       <Body idioma={idioma} data={data}/>
       <Footer idioma={idioma} />

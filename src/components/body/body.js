@@ -16,9 +16,9 @@ export const Body = ({idioma, data}) => {
           <Especialidades idioma={idioma}/>
         </Flex>
 
-        <Flex marginTop={'1%'}>
+        {/* <Flex marginTop={'1%'}>
           <Testimonio idioma={idioma}/>
-        </Flex>
+        </Flex> */}
 
         <Flex marginTop={'1%'}>
           <About idioma={idioma}/>

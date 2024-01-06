@@ -15,6 +15,11 @@ export const Portada = ({idioma, data}) => {
     const h1= datosPortada.portada.h1
     const h2= datosPortada.portada.h2
 
+    const backgroundImageStyle = {
+        backgroundImage: imgPortada[0]?.url ? `url(${imgPortada[0]?.url})` : 'none',
+      };
+    
+
   return (
     <Box w={'100%'}>
         <Box 
@@ -22,7 +27,7 @@ export const Portada = ({idioma, data}) => {
         minW={{base:'300px', lg:'100vw'}}
         minH={{base:'600px', lg:'600px'}}
         position={'relative'}
-        backgroundImage={`url(${imgPortada[0]?.url})`}
+        backgroundImage={backgroundImageStyle?.backgroundImage}
         backgroundColor={'black'}
         backgroundAttachment={'fixed'}
         backgroundPosition={'center'}

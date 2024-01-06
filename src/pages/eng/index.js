@@ -1,10 +1,16 @@
 import { Inter } from 'next/font/google'
-import Prueba from '@/components/prueba';
 import NavBar from '@/components/navbar/navbar';
 import Footer from '@/components/footer/footer';
 import { HStack } from '@chakra-ui/react';
 import FootBar from '@/components/footer/footBar';
 import { Body } from '@/components/body/body';
+import Head from 'next/head';
+
+export const metadata = {
+  title: 'Arena Negra Restaurant - Los Abrigos, Tenerife',
+  description: 'Enjoy the best paellas and grilled local fish in Los Abrigos, Tenerife. Arena Negra Restaurant offers a unique experience with stunning views and unbeatable customer service.',
+  keywords: 'Restaurant, Paella, Seafood, Local Fish, Los Abrigos, Tenerife, Sea Views, Excellent Service, Restaurant in Los Abrigos, Where to eat fish in Los Abrigos, Where to eat paella in Los Abrigos'
+}
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,7 +22,12 @@ export default function Home({data}) {
     <main
     className={`flex flex-col  ${inter.className}`}
   >
-    <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="keywords" content={metadata.keywords} />
+        <meta name="google-site-verification" content="Rm2sDQs-MVKtHT9LyDkRsSFVTAVbA0OHFvWdRa7I3F8" />
+      </Head>
 
 
       <NavBar idioma={idioma}/>
