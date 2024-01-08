@@ -1,4 +1,4 @@
-const img = require('../../../../public/images/1024/Entrada.jpg')
+import img from '../../../../public/images/800/jarra.jpg'
 
 export const datos=
 {

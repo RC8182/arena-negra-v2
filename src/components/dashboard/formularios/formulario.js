@@ -15,14 +15,14 @@ export default function Formulario({type}) {
     if (!file) return;
 
     try {
-      const data = new FormData();
+      var data = new FormData();
       data.set("file", file);
       data.set("title_file", title_file);
       data.set("folder", type);
       (type==='especialidades')
       ? data.set('especialidades', comment)
       : null;
-
+      console.log('data', data)
       const res = await fetch("/api/upload", {
         method: "POST",
         body: data,

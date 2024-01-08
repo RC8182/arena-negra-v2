@@ -38,19 +38,19 @@ export default function Inicio({data}) {
   )
 }
 
-export async function getStaticProps() {
-  // Cargar datos en el servidor
-  const data = await loadDataDb();
+// export async function getStaticProps() {
+//   // Cargar datos en el servidor
+//   const data = await loadDataDb();
 
-  // Pasar los datos a tu página a través de las props
-  return { props: { data } };
-}
+//   // Pasar los datos a tu página a través de las props
+//   return { props: { data } };
+// }
 
-export async function loadDataDb() {
-  // Call an external API endpoint to get posts
-  const res = await fetch('http://localhost:3000/api/get')
-  const data = await res.json()
+// export async function loadDataDb() {
+//   // Call an external API endpoint to get posts
+//   const res = await fetch('http://localhost:3000/api/get')
+//   const data = await res.json()
  
-  return data
-}
+//   return data
+// }
 

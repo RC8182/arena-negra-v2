@@ -1,5 +1,5 @@
-import paella from '../../../../public/images/1024/tinta.jpg'
-import tabla from '../../../../public/images/1460/tablita.jpg'
+import paella from '../../../../public/images/800/paella.jpg'
+import tabla from '../../../../public/images/800/tablita.jpg'
 export const datos=
 {
     esp:{
